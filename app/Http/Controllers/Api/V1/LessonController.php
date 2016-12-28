@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Http\Controllers\Api\ApiController;
 use App\Lesson;
 use App\Transformer\LessonTransformer;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class LessonController extends Controller
+class LessonController extends ApiController
 {
     protected $lessonTransformer;
 
@@ -26,8 +26,9 @@ class LessonController extends Controller
         //
         $lessons = Lesson::all();
 
+        if(!$lessons) return $this->responseNotFound('数据为空');
 
-        return response()->json([
+        return $this->response([
             'msg' => 'success',
             'code' => 200,
             'data' => $this->lessonTransformer->transformCollection($lessons->toArray())
@@ -67,8 +68,9 @@ class LessonController extends Controller
         //
         $lessons = Lesson::findOrFail($id);
 
+        if(!$lessons) return $this->responseNotFound('数据为空!');
 
-        return response()->json([
+        return $this->response([
             'msg' => 'success',
             'code' => 200,
             'data' => $this->lessonTransformer->transform($lessons)
@@ -76,37 +78,4 @@ class LessonController extends Controller
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
