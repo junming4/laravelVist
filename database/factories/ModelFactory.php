@@ -30,3 +30,12 @@ $factory->define(App\Post::class, function (Faker\Generator $faker) {
         'body' => $faker->paragraph,
     ];
 });
+
+$factory->define(App\Lesson::class, function (Faker\Generator $faker) {
+
+    return [
+        'title' => $faker->sentence,
+        'body' => $faker->paragraph,
+        'free' => $faker->boolean()
+    ];
+});

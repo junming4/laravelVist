@@ -11,11 +11,16 @@
 |
 */
 
-Route::get('/',function(){
+Route::get('/', function () {
     //$collection = collect(['Desk', 'Sofa', 'Chair']);
     //$intersect = $collection->intersect(['Desk', 'Chair', 'Bookcase']);
     #print_r($intersect);
     return view('welcome');
 });
 
-Route::resource('/post','PostController');
+Route::resource('/post', 'PostController');
+
+
+Route::group(['prefix' => 'api/v1', 'namespace' => 'Api\V1'], function () {
+    Route::resource('lesson', 'LessonController');
+});

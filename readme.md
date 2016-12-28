@@ -73,9 +73,5 @@
    
 #api的开发
 
-    
-    
-   
+当提示没有这个函数时可以使用: composer dump-autload
 
-
-# laravelVist
