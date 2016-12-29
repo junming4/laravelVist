@@ -72,6 +72,22 @@
    https://github.com/romanbican/roles 权限控制系统
    
 #api的开发
-
 当提示没有这个函数时可以使用: composer dump-autload
+
+#安装好了dingo/api 和jwt-auth 现在开始一些使用 ，继续开发。。。。  
+ 
+配置具体数据: 到config/api.php
+    'auth' => [
+        'basic' => function($app){
+            return new  Dingo\Api\Auth\Provider\Basic($app['auth']);
+        },
+        'jwt' => function($app) {
+            return  new Dingo\Api\Auth\Provider\JWT($app['Tymon\JWTAuth\JWTAuth']) ;
+        }
+    ],
+然后去到 Kernel.php把jwt配置上去
+   
+    
+ 
+
 

@@ -18,9 +18,34 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/post', 'PostController');
+//Route::resource('/post', 'PostController');
 
 
-Route::group(['prefix' => 'api/v1', 'namespace' => 'Api\V1'], function () {
+//原生的api
+/*Route::group(['prefix' => 'api/v1', 'namespace' => 'Api\V1'], function () {
     Route::resource('lesson', 'LessonController');
+});*/
+
+//dingo/api 来写的
+
+$api = app('Dingo\Api\Routing\Router');
+
+$api->version('v1', function ($api) {
+    $api->group(['namespace' => 'App\Api\Controllers'], function ($api) {
+
+        /*$api->get('test',function (){
+            \App\User::create([
+                'name' => 'admin',
+                'email' => '2284876299@qq.com',
+                'password' => bcrypt(123456)
+            ]);
+
+        })  ;*/
+
+        $api->get('lessons', 'LessonController@index');
+        $api->get('lessons/{id}', 'LessonController@show');
+
+        $api->post('authenticate','AuthenticateController@authenticate');
+
+    });
 });
