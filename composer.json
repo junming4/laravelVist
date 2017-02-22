@@ -10,7 +10,10 @@
         "barryvdh/laravel-ide-helper": "^2.2",
         "barryvdh/laravel-debugbar": "^2.2",
         "dingo/api": "1.0.x@dev",
-        "tymon/jwt-auth": "^0.5.9"
+        "tymon/jwt-auth": "^0.5.9",
+        "laravel/socialite": "2.0.x-dev",
+        "spatie/laravel-url-signer": "^1.1",
+        "asvae/laravel-api-tester": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -86,6 +86,35 @@
         }
     ],
 然后去到 Kernel.php把jwt配置上去
+
+创建有效的url连接:
+composer require spatie/laravel-url-signer
+'providers' => [
+    Spatie\UrlSigner\Laravel\UrlSignerServiceProvider::class,
+];
+'aliases' => [
+    'UrlSigner' => Spatie\UrlSigner\Laravel\UrlSignerFacade::class,
+];
+php artisan vendor:publish --provider="Spatie\UrlSigner\Laravel\UrlSignerServiceProvider"
+
+UrlSigner::sign('https://myapp.com/protected-route', 30);
+UrlSigner::validate('https://app.com/protected-route?expires=xxxxxx&signature=xxxxxx');
+The package also provides a middleware to protect routes.
+
+#类似postman插件
+composer require asvae/laravel-api-tester
+After updating composer, add the ServiceProvider to the providers array in config/app.php
+
+Asvae\ApiTester\ServiceProvider::class,
+That's it. Go to [your site]/api-tester and start testing routes. It works for Laravel 5.1+.
+
+Config
+
+By default, the package is bound to APP_DEBUG .env value. But you can easily override it. Just publish config:
+
+php artisan vendor:publish --provider="Asvae\ApiTester\ServiceProvider"
+And edit config/api-tester.php as you please.
+
    
     
  

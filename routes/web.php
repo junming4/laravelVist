@@ -40,7 +40,7 @@ $api->version('v1', function ($api) {
                 'password' => bcrypt(123456)
             ]);
 
-        })  ;*/
+        });*/
 
         $api->get('lessons', 'LessonController@index');
         $api->get('lessons/{id}', 'LessonController@show');
