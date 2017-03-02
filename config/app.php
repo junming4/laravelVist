@@ -182,12 +182,13 @@ return [
          * phper add now
          */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
+       // Barryvdh\Debugbar\ServiceProvider::class,
         Dingo\Api\Provider\LaravelServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Spatie\UrlSigner\Laravel\UrlSignerServiceProvider::class,
         Asvae\ApiTester\ServiceProvider::class,
+        Latrell\Swagger\SwaggerServiceProvider::class
 
     ],
 
@@ -239,7 +240,7 @@ return [
         /*
          * phper add
          */
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        //'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,

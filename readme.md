@@ -115,6 +115,39 @@ By default, the package is bound to APP_DEBUG .env value. But you can easily ove
 php artisan vendor:publish --provider="Asvae\ApiTester\ServiceProvider"
 And edit config/api-tester.php as you please.
 
+#laravel latrell/swagger 的安装和使用 接口文档
+1、composer require latrell/swagger dev-master
+2、添加提供类:'providers' => [
+        // ...
+        'Latrell\Swagger\SwaggerServiceProvider',
+    ]
+3、移动配置文件:php artisan vendor:publish 
+   
+#创建带表文件的model: php artisan Article -m
+   1）、修改表 文件数据
+   2）、生成表 php artisan migrate
+#测试插入文件
+   1)、修改factories 中文件的数据
+   2)、php artisan tinker
+   3)、namespace App
+   4)、factory(Article::class,20)->create();
+
+#多对多关联
+    $tags = \App\Tag::find(2);
+    //$article_tag = $tags->articles()->attach(5);  #先关联
+    $article_tag = $tags->articles()->detach(5);    #把关联删除
+    dd($article_tag);
+    
+#快速创建event
+    1)、在:D:\xiao\xampp\htdocs\laravelVist\app\Providers\EventServiceProvider.php 添加以下代码
+    $listen = [
+            'App\Events\PostEvent' => [
+                'App\Listeners\PostListener',
+            ],
+    2)、然后运行 php artisan event:generate 会自动生成两个类的        
+            
+            
+
    
     
  

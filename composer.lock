@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3cfb7ee3d7cdb416830acc37d4f41f98",
-    "content-hash": "95b756602b54fd03536cdb31b3a9c005",
+    "hash": "8e4050ab78158a4b281de1f684a37eec",
+    "content-hash": "c1e292c25e4088423a90b8d816e21fb7",
     "packages": [
         {
             "name": "asvae/laravel-api-tester",
@@ -1129,6 +1129,62 @@
                 "oauth"
             ],
             "time": "2016-12-28 14:38:12"
+        },
+        {
+            "name": "latrell/swagger",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Latrell/Swagger.git",
+                "reference": "4672cb8ade57a2e3e1620ce4aa27d8d80361a841"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/Latrell/Swagger/4672cb8ade57a2e3e1620ce4aa27d8d80361a841.zip",
+                "reference": "4672cb8ade57a2e3e1620ce4aa27d8d80361a841",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "5.*",
+                "illuminate/console": "5.*",
+                "illuminate/support": "5.*",
+                "illuminate/view": "5.*",
+                "php": ">=5.4.0",
+                "zircote/swagger-php": "1.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "*",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/controllers"
+                ],
+                "psr-0": {
+                    "Latrell\\Swagger\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Latrell Chan",
+                    "email": "i@latrell.me"
+                }
+            ],
+            "description": "Swagger for Laravel 5",
+            "keywords": [
+                "Swagger-PHP",
+                "l5",
+                "laravel",
+                "laravel 5",
+                "swagger",
+                "swagger-ui"
+            ],
+            "time": "2015-07-06 12:14:06"
         },
         {
             "name": "league/flysystem",
@@ -3478,6 +3534,62 @@
                 "validate"
             ],
             "time": "2016-11-23 20:04:58"
+        },
+        {
+            "name": "zircote/swagger-php",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zircote/swagger-php.git",
+                "reference": "93b904dcdf88ab3a4d195679229943ffc766a0d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/zircote/swagger-php/93b904dcdf88ab3a4d195679229943ffc766a0d1.zip",
+                "reference": "93b904dcdf88ab3a4d195679229943ffc766a0d1",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/annotations": "*",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/finder": "*",
+                "symfony/process": "*"
+            },
+            "bin": [
+                "bin/swagger"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Swagger": "library"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Allen",
+                    "email": "zircote@gmail.com",
+                    "homepage": "http://www.zircote.com"
+                },
+                {
+                    "name": "Bob Fanger",
+                    "email": "bfanger@gmail.com",
+                    "homepage": "http://bfanger.nl"
+                }
+            ],
+            "description": "Swagger-PHP library implementing the swagger.wordnik.com specification to describe web services, operations/actions and models enabling a uniform means of producing, consuming, and visualizing RESTful web services.",
+            "homepage": "https://github.com/zircote/swagger-php/",
+            "keywords": [
+                "api",
+                "json",
+                "service discovery"
+            ],
+            "time": "2015-04-25 08:05:39"
         }
     ],
     "packages-dev": [
@@ -4865,7 +4977,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "dingo/api": 20,
-        "laravel/socialite": 20
+        "laravel/socialite": 20,
+        "latrell/swagger": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

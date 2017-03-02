@@ -39,3 +39,16 @@ $factory->define(App\Lesson::class, function (Faker\Generator $faker) {
         'free' => $faker->boolean()
     ];
 });
+
+$factory->define(App\Article::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentence,
+        'body' => $faker->paragraph
+    ];
+});
+
+$factory->define(App\Tags::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->word
+    ];
+});

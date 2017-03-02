@@ -49,3 +49,26 @@ $api->version('v1', function ($api) {
 
     });
 });
+
+//api
+Route::get('/test','Doc\UserController@index');
+
+Route::group(['namespace' => 'Doc','prefix' => 'swagger'], function () {
+    Route::get('json', 'SwaggerController@getJSON');
+    Route::get('my-data', 'SwaggerController@getMyData');
+});
+
+Route::get('/test2',function (){
+
+    /*$article = \App\Article::find(3);
+    $article_tag = $article->tags()->attach(2);
+    dd($article_tag);*/
+
+    $tags = \App\Tag::find(2);
+    $article_tag = $tags->articles()->detach(5);
+    dd($article_tag);
+
+});
+
+
+
