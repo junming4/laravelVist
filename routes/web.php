@@ -11,6 +11,7 @@
 |
 */
 
+use Illuminate\Support\Facades\Redis;
 Route::get('/', function () {
     //$collection = collect(['Desk', 'Sofa', 'Chair']);
     //$intersect = $collection->intersect(['Desk', 'Chair', 'Bookcase']);
@@ -69,6 +70,38 @@ Route::get('/test2',function (){
     dd($article_tag);
 
 });
+
+
+//redis 学习
+Route::get('redis',function (){
+
+
+   /* Redis::set('name','333');
+
+    return Redis::get('name');*/
+
+    Cache::put('name','hello',10);
+
+    return Cache::get('name');
+
+});
+
+
+//实现订阅
+Route::get('/subscribe',function (){
+
+    $data = [
+        'event' => 'addNewMessage',
+        'data' => [
+            'name' => 'junming'
+        ]
+    ];
+    Redis::publish('test-channel',json_encode($data));
+
+    return view('subscribe');
+
+});
+
 
 
 

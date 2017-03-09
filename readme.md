@@ -144,7 +144,21 @@ And edit config/api-tester.php as you please.
             'App\Events\PostEvent' => [
                 'App\Listeners\PostListener',
             ],
-    2)、然后运行 php artisan event:generate 会自动生成两个类的        
+    2)、然后运行 php artisan event:generate 会自动生成两个类的
+
+#laravel中使用redis
+ 1)、请求redis包: composer require predis/predis
+ 2)、需要修改.env 中CACHE_DRIVER=redis
+ 3)、纯原生的使用 :
+    需要引入:use Illuminate\Support\Facades\Redis; //没有加上前缀
+    Redis::set('name','333');
+    return Redis::get('name');
+ 4)、直接使用cache门面使用:不用引入任何插件
+     Cache::put('name','hello',10);
+     return Cache::get('name');
+     
+#laravel 安装socket.io ioredis   
+  npm install socket.io ioredis --save
             
             
 
