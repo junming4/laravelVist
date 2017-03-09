@@ -158,7 +158,10 @@ And edit config/api-tester.php as you please.
      return Cache::get('name');
      
 #laravel 安装socket.io ioredis   
-  npm install socket.io ioredis --save
+  npm install socket.io ioredis --save         
+  
+#git 设置别名
+  git config --global alias.st status
             
             
 
