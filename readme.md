@@ -162,6 +162,36 @@ And edit config/api-tester.php as you please.
   
 #git 设置别名
   git config --global alias.st status
+  
+#定时任务
+  app\Console\Kernel.php
+  中的schedule 添加你要实现的任务
+   protected function schedule(Schedule $schedule)
+      {
+          // $schedule->command('inspire')
+          //          ->hourly();
+  
+          $schedule->call(function () {
+              echo "hello world to php";
+          })->daily();
+      }
+      
+#如何然php artisan queue listen 一直运行着可以使用
+      Supervisor 是一个 Linux 操作系统上的进程监控软件，它会在 queue:listen 或 queue:work 命令发生失败后自动重启它们。要在 Ubuntu 安装 Supervisor，可以用以下命令
+      文档地址：http://d.laravel-china.org/docs/5.1/queues
+      http://yansu.org/2014/03/22/managing-your-larrvel-queue-by-supervisor.html
+      Supervisor 配置文件通常存放在 /etc/supervisor/conf.d 目录，在该目录中，可以创建多个配置文件指示 Supervisor 如何监视进程，例如，让我们创建一个开启并监视queue:work 进程的 laravel-worker.conf 文件：
+      
+      [program:laravel-worker]
+      process_name=%(program_name)s_%(process_num)02d
+      command=php /home/forge/app.com/artisan queue:work sqs --sleep=3 --tries=3
+      autostart=true
+      autorestart=true
+      user=forge
+      numprocs=8
+      redirect_stderr=true
+      stdout_logfile=/home/forge/app.com/worker.log
+
             
             
 
