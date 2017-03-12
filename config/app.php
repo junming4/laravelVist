@@ -188,7 +188,9 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         Spatie\UrlSigner\Laravel\UrlSignerServiceProvider::class,
         Asvae\ApiTester\ServiceProvider::class,
-        Latrell\Swagger\SwaggerServiceProvider::class
+        Latrell\Swagger\SwaggerServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class, //全文索引插件
+        ScoutEngines\Elasticsearch\ElasticsearchProvider::class,//支持Elasticsearch 引擎
 
     ],
 

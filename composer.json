@@ -15,7 +15,10 @@
         "spatie/laravel-url-signer": "^1.1",
         "asvae/laravel-api-tester": "^2.0",
         "latrell/swagger": "dev-master",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "laravel/scout": "2.0.x-dev",
+        "elasticsearch/elasticsearch": "^5.1",
+        "tamayo/laravel-scout-elastic": "2.0.x-dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

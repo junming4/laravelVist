@@ -192,6 +192,24 @@ And edit config/api-tester.php as you please.
       redirect_stderr=true
       stdout_logfile=/home/forge/app.com/worker.log
 
+#laravel 全文索引插件 laravel/scout
+    1)、安装 composer require laravel/scout 【5.3】composer require laravel/scout:2.0.x-dev
+    providers =>[ Laravel\Scout\ScoutServiceProvider::class,  ]
+    php artisan vendor:publish --provider="Laravel\Scout\ScoutServiceProvider" //生成配置文件
+    2) 安装 ElasticSearch ： composer require elasticsearch/elasticsearch
+    Elasticquent\ElasticquentServiceProvider::class,
+    导入:
+    php artisan scout:import "App\Article"
+    提示:
+    [InvalidArgumentException]
+    Driver [elasticsearch] not supported.
+    说明没有 elasticsearch引擎需要使用另外一个查看
+    composer require tamayo/laravel-scout-elastic:2.0.x-dev
+    providers =>[ScoutEngines\Elasticsearch\ElasticsearchProvider::class,]
+
+
+      
+
             
             
 

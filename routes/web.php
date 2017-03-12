@@ -103,5 +103,16 @@ Route::get('/subscribe',function (){
 });
 
 
+//全文索引测试
+Route::get('/search',function (){
+   // dd(App\Article::search('Impedit')->get());
+    dd(App\Lesson::search('Quam')->get());
+
+
+    /*App\Article::where('id', 2)
+        ->update(['title' => '肖张']);*/
+});
+
+
 
 
