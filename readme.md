@@ -164,6 +164,9 @@ And edit config/api-tester.php as you please.
   git config --global alias.st status
   
 #定时任务
+
+ php artisan schedule:run
+
   app\Console\Kernel.php
   中的schedule 添加你要实现的任务
    protected function schedule(Schedule $schedule)
@@ -206,6 +209,19 @@ And edit config/api-tester.php as you please.
     说明没有 elasticsearch引擎需要使用另外一个查看
     composer require tamayo/laravel-scout-elastic:2.0.x-dev
     providers =>[ScoutEngines\Elasticsearch\ElasticsearchProvider::class,]
+    
+    再执行 php artisan scout:import "App\Article"
+    使用:dd(App\Article::search('Impedit')->get()); 
+    
+#发送邮件 
+    php artisan make:mail WelcomeLaravel
+    Mail/WelcomeLaravel 中执行模板的地址
+    然后发送信息
+    Mail::to('xiaojunming4@gmail.com')->send(new \App\Mail\WelcomeLaravel())就能发送邮件了  
+    
+     
+     
+    **`_****_`**
 
 
       
