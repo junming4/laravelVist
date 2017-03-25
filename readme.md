@@ -218,10 +218,14 @@ And edit config/api-tester.php as you please.
     Mail/WelcomeLaravel 中执行模板的地址
     然后发送信息
     Mail::to('xiaojunming4@gmail.com')->send(new \App\Mail\WelcomeLaravel())就能发送邮件了  
-    
-     
-     
     **`_****_`**
+    
+#php artisan  migrate 的一些知识
+   创建php artisan make:migration create_articles_table  --table=articles表 //添加字段
+   php artisan make:migration create_articles_table  --create=articles 创建表
+   make:notification ？ 作用？  
+   make:bindings ？ 使用 
+   
 
 
       
