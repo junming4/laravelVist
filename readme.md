@@ -226,6 +226,10 @@ And edit config/api-tester.php as you please.
    make:notification ？ 作用？  
    make:bindings ？ 使用 
    
+#创建表不知道文档表示可以查看
+   vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php
+   添加外键模板
+   
 
 
       
