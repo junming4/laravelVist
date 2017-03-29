@@ -229,6 +229,11 @@ And edit config/api-tester.php as you please.
 #创建表不知道文档表示可以查看
    vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php
    添加外键模板
+
+#composer require laravelcollective/html:5.3.0 网页数据packgist.org   
+
+#安装 php-cs-fixer 编码修复工具，前提你必须安装composer
+   composer global require fabpot/php-cs-fixer //在composer 全局安装php-cs-fixer
    
 
 
